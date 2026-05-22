@@ -1,0 +1,11 @@
+---
+- name: variable example
+  hosts: web
+  tasks:
+   - name: set a variable
+     ansible.builtin.set_fact:
+       my_variable: "Hello, Ansible!"
+
+   - name: use the variable
+     ansible.builtin.debug:
+       msg: "{{ my_variable }}"
