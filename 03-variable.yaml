@@ -1,11 +1,12 @@
 ---
 - name: variable example
-  hosts: web
+  hosts: local
+  connection: local
+  vars:
+    course: "DevOps with AWS"
+    Duration: "3 months"
+    trainer: "shiva"
   tasks:
-   - name: set a variable
-     ansible.builtin.set_fact:
-       my_variable: "Hello, Ansible!"
-
-   - name: use the variable
-     ansible.builtin.debug:
-       msg: "{{ my_variable }}"
+  - name: print variables
+    ansible.builtin.debug:
+      msg: "course name is: {{ course }}, and trainer is: {{ trainer }}"
