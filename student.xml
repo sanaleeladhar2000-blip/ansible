@@ -1,0 +1,12 @@
+<!-- Student object -->
+
+<student>
+  <name>John Doe</name>
+  <age>20</age>
+  <email>john.doe@example.com</email>
+  <address>
+    <street>Dorasanipalle</street>
+    <city>proddatur</city>
+    <state>ap</state>
+  </address>
+</student>
