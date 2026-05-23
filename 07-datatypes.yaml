@@ -1,0 +1,26 @@
+- name: demo on datatypes
+  hosts: local
+  connection: local
+  vars:
+    program: "DevOps with AWS"
+    Duration: 140
+    Is_live: true
+    Details:
+      months: 3
+      trainer: "shiva"
+    topics:
+      - ansible
+      - docker
+      - kubernetes
+      - terraform
+      - linux
+  tasks:
+  - name: print variables
+    ansible.builtin.debug:
+      msg: |
+        program name is: {{ program }}
+        Duration is: {{ Duration }}
+        Is_live: {{ Is_live }}
+        Details: {{ Details }}
+        topics: {{ topics }}
+  
