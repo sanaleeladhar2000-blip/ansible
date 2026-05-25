@@ -1,0 +1,13 @@
+- name: demo on filters
+  hosts: local
+  connection: local
+  vars:
+    topics: "ansible, devops, aws"
+  tasks:
+    - name: Gretting
+      ansible.builtin.debug:
+        msg: "Hello leeladhar, {{ Gretting | default('good morning') }}"
+      
+    - name: convert string to list
+      ansible.builtin.debug:
+        msg: "topics are {{ topics.split(',') }}"
