@@ -1,0 +1,8 @@
+- name: demo of idenmpotency
+  hosts: local
+  connection: local
+  become: yes
+  tasks:
+    - name: create a new user
+      ansible.builtin.user:
+        name: leeladhar
