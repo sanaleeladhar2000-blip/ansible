@@ -1,0 +1,12 @@
+- name: package installation
+  hosts: local
+  connection: local
+  become: true
+  tasks:
+    - name: package installation
+      ansible.builtin.package:
+        name: "{{ item }}"
+      loop:
+        - mssql-server
+        - nginx
+        - zip
