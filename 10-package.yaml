@@ -6,6 +6,7 @@
     - name: package installation
       ansible.builtin.package:
         name: "{{ item }}"
+        state: present
       loop:
         - mssql-server
         - nginx
