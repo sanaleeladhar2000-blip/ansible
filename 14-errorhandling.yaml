@@ -1,0 +1,17 @@
+- name: demo on error handling
+  hosts: local
+  connection: local
+  become: true
+  tasks:
+    - name: check user is exist or not
+      ansible.builtin.command: id leeladhar
+      register: user_output
+      ignore_errors: true
+      
+    - name: print the output
+      ansible.builtin.debug:
+        msg: "{{ user_output }}"
+
+    - name: create user
+      ansible.builtin.command: useradd leeladhar
+      when: user_output.rc != 0
